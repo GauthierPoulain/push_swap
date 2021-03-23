@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_is_p1.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/23 13:43:47 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/23 13:34:51 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/23 13:35:12 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/checker.h"
+#include "../libft.h"
 
-int	main(int argc, char **argv)
+bool	ft_isalpha(char c)
 {
-	(void)argc;
-	printf("push swap\n");
-	printf("%d\n", ft_atoi(argv[1]));
-	printf("%d\n", atoi(argv[1]));
-	close_checker(CLOSE_OK);
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+}
+
+bool	ft_isdigit(char c)
+{
+	return (c >= '0' && c <= '9');
+}
+
+bool	ft_isalnum(char c)
+{
+	return (ft_isalpha(c) || ft_isdigit(c));
+}
+
+bool	ft_isascii(char c)
+{
+	return (c >= 0 && c <= 127);
+}
+
+bool	ft_isprint(char c)
+{
+	return (c >= 32 && c <= 126);
 }

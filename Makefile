@@ -41,15 +41,18 @@ SRCS_C = \
 all: $(NAME_C)
 
 $(NAME_C): $(OBJS_C)
-	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ building ] $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
-	@$(CC) $(CFLAGS) -o $(NAME_C) $(OBJS_C)
+	@$(MAKE) -C ./libft
+	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ building ] $(_BLUE)$(_BOLD)$(NAME_C)$(_END)\n"
+	@$(CC) $(CFLAGS) -o $(NAME_C) $(OBJS_C) ./libft/libft.a
 	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_BLUE)$(_BOLD)!$(_END) ][ done ]\n"
 
 clean:
+	@$(MAKE) clean -C ./libft
 	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(_BLUE)$(_BOLD)objs $(_END)\n"
 	@$(RM) $(OBJS_C)
 
 fclean: clean
+	@$(MAKE) fclean -C ./libft
 	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(_BLUE)$(_BOLD)$(NAME_C) $(_END)\n"
 	@$(RM) $(NAME_C)
 

@@ -6,17 +6,14 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 03:14:26 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/18 04:11:06 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 13:38:29 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
-# include <stdio.h>
-# include <stdbool.h>
-# include <stddef.h>
-# include <stdlib.h>
+# include "../../libft/libft.h"
 
 # define CLOSE_OK		0
 # define CLOSE_KO		1

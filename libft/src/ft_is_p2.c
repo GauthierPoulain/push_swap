@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_is_p2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/23 13:43:47 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/23 13:35:55 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/23 13:36:01 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/checker.h"
+#include "../libft.h"
 
-int	main(int argc, char **argv)
+bool	ft_isspace(char c)
 {
-	(void)argc;
-	printf("push swap\n");
-	printf("%d\n", ft_atoi(argv[1]));
-	printf("%d\n", atoi(argv[1]));
-	close_checker(CLOSE_OK);
+	return ((c >= 9 && c <= 13) || c == ' ');
+}
+
+bool	ft_ischarset(char c, char *charset)
+{
+	int		i;
+
+	i = 0;
+	while (charset[i])
+	{
+		if (charset[i] == (char)c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+bool	ft_isinrange(long long value, long long min, long long max)
+{
+	return (value >= min && value <= max);
 }
