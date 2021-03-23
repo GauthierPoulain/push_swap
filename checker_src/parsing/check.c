@@ -6,11 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 16:03:49 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/23 16:32:08 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 17:20:05 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/checker.h"
+#include "../includes/checker.h"
 
 static bool	check_arg(char *s)
 {

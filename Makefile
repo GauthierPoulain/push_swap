@@ -62,4 +62,7 @@ fclean: clean
 re: fclean
 re: all
 
+norm:
+	norminette
+
 .PHONY: all clean fclean re test_c

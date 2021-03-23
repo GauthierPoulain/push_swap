@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 03:14:26 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/23 17:10:16 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 17:19:57 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 
 # include "../../libft/libft.h"
 
-# define 	PRINT_STACKS	true
+# define 	PRINT_STACKS	1
 
 # define CLOSE_OK		0
 # define CLOSE_KO		1
 # define CLOSE_ERROR	2
-
 
 typedef struct s_stack
 {
