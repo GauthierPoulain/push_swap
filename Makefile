@@ -33,6 +33,8 @@ OBJS_C = $(SRCS_C:%.c=%.o)
 SRCS_C = \
 	checker_src/checker.c \
 	checker_src/handle_close.c \
+	checker_src/parsing/parsing.c \
+	checker_src/parsing/check.c \
 
 %.o: %.c $(HEADERS_C)
 	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
@@ -58,8 +60,5 @@ fclean: clean
 
 re: fclean
 re: all
-
-test_c: $(NAME_C)
-	@./checker
 
 .PHONY: all clean fclean re test_c

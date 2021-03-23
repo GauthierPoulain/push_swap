@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/23 13:43:47 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 16:27:55 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	(void)argc;
-	printf("push swap\n");
-	printf("%d\n", ft_atoi(argv[1]));
-	printf("%d\n", atoi(argv[1]));
+	t_checker	checker;
+
+	parsing(&checker, argc, argv);
 	close_checker(CLOSE_OK);
 }

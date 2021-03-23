@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 13:31:41 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/23 13:40:47 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 16:19:46 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdbool.h>
 # include <stddef.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 int			ft_atoi(const char *str);
 bool		ft_isalpha(char c);
@@ -27,5 +28,7 @@ bool		ft_isprint(char c);
 bool		ft_isspace(char c);
 bool		ft_ischarset(char c, char *charset);
 bool		ft_isinrange(long long value, long long min, long long max);
+size_t		ft_strlen(char *s);
+void		ft_print_err(char *msg);
 
 #endif

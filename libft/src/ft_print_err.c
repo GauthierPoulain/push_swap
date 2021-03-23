@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_close.c                                     :+:      :+:    :+:   */
+/*   ft_print_err.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 03:24:46 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/23 16:19:54 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/23 16:11:02 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/23 16:19:21 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/checker.h"
+#include "../libft.h"
 
-void	close_checker(int code)
+void	ft_print_err(char *msg)
 {
-	if (code == CLOSE_ERROR)
-	{
-		ft_print_err("Error\n");
-		exit(EXIT_FAILURE);
-	}
-	else if (code == CLOSE_OK)
-	{
-		printf("OK\n");
-		exit(EXIT_SUCCESS);
-	}
-	else if (code == CLOSE_KO)
-	{
-		printf("KO\n");
-		exit(EXIT_SUCCESS);
-	}
-	else
-	{
-		printf("unhandled close code\n");
-		exit(EXIT_FAILURE);
-	}
+	write(2, msg, ft_strlen(msg));
 }

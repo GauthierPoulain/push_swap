@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 03:14:26 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/23 13:38:29 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 16:09:17 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 typedef struct s_stack
 {
-	int				value;
-	struct s_stack	*next;
+	int			*stack;
+	ssize_t		size;
 }				t_stack;
 
 typedef struct s_checker
@@ -32,5 +32,8 @@ typedef struct s_checker
 }				t_checker;
 
 void	close_checker(int code);
+
+void	parsing(t_checker *checker, int argc, char **argv);
+void	parsing_check(int argc, char **argv);
 
 #endif

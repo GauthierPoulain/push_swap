@@ -34,6 +34,8 @@ SRCS = \
 	src/ft_atoi.c \
 	src/ft_is_p1.c \
 	src/ft_is_p2.c \
+	src/ft_print_err.c \
+	src/ft_strlen.c \
 
 %.o: %.c $(HEADER)
 	@printf "[ ${_PURPLE}${_BOLD}${NAME}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
