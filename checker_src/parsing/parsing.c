@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 16:05:40 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/24 10:08:07 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 10:18:06 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	fill_stack_a(t_checker *checker, int argc, char **argv)
 static void	fill_stack_b(t_checker *checker)
 {
 	int		i;
-	
+
 	checker->stack_b.stack = malloc(sizeof(int) * checker->stack_a.size);
 	if (!checker->stack_b.stack)
 		close_checker(CLOSE_ERROR);
