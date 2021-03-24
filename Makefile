@@ -36,6 +36,7 @@ SRCS_C = \
 	checker_src/parsing/parsing.c \
 	checker_src/parsing/check.c \
 	checker_src/print_stacks.c \
+	checker_src/get_instru/get_instru.c \
 
 %.o: %.c $(HEADERS_C)
 	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
@@ -64,5 +65,8 @@ re: all
 
 norm:
 	norminette
+
+test:
+	./test.sh
 
 .PHONY: all clean fclean re test_c

@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/24 10:57:31 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/24 10:44:03 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/24 10:52:23 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/checker.h"
+#include "../libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strdup(char *s1)
 {
-	t_checker	checker;
+	char	*str;
+	int		len;
+	int		i;
 
-	parsing(&checker, argc, argv);
-	if (PRINT_STACKS)
-		print_stacks(&checker);
-	get_instru(&checker);
-	print_instru(&checker);
-	close_checker(CLOSE_OK);
+	len = ft_strlen(s1);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	str[i] = 0;
+	return (str);
 }

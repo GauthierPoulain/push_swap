@@ -4,7 +4,7 @@ clear
 
 make checker
 
-ARG=`ruby -e "puts (1..10000).to_a.shuffle.join(' ')"`
+ARG=`ruby -e "puts (1..10).to_a.shuffle.join(' ')"`
 # echo "test with $ARG"
 
 printf "\-\-\-\-\RUN/-/-/-/-/\n"

@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 17:00:43 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/24 10:11:41 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 10:56:58 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,16 @@ void	print_stacks(t_checker *checker)
 		i++;
 	}
 	printf("|----------------------------------------------------|\n");
+}
+
+void	print_instru(t_checker *checker)
+{
+	t_list	*lst;
+
+	lst = checker->instru;
+	while (lst)
+	{
+		printf("%s, ", lst->content);
+		lst = lst->next;
+	}
 }

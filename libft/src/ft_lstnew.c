@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/24 10:57:31 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/02/08 13:35:12 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/24 10:27:45 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/checker.h"
+#include "../libft.h"
 
-int	main(int argc, char **argv)
+t_list	*ft_lstnew(void *content)
 {
-	t_checker	checker;
+	t_list	*lst;
 
-	parsing(&checker, argc, argv);
-	if (PRINT_STACKS)
-		print_stacks(&checker);
-	get_instru(&checker);
-	print_instru(&checker);
-	close_checker(CLOSE_OK);
+	lst = malloc(sizeof(t_list));
+	if (!lst)
+		return (NULL);
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
 }
