@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 12:21:42 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/24 14:17:38 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 15:35:17 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,16 @@ void	ft_swap(int *a, int *b)
 	*b = salut;
 }
 
-int		ft_pop(t_stack *stack)
-{
-	int		buff;
+// int		ft_pop(t_stack *stack)
+// {
+// 	int		buff;
 
-	rotn1(stack);
-	return (buff);
-}
+// 	rotn1(stack);
 
-void	ft_push(t_stack *stack, int value)
-{
-	stack->size++;
-}
+// 	return (buff);
+// }
+
+// void	ft_push(t_stack *stack, int value)
+// {
+// 	stack->size++;
+// }
