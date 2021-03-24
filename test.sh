@@ -4,10 +4,11 @@ clear
 
 make checker
 
-ARG=`ruby -e "puts (1..10).to_a.shuffle.join(' ')"`
+# ARG=`ruby -e "puts (1..10).to_a.shuffle.join(' ')"`
 # echo "test with $ARG"
 
 printf "\-\-\-\-\RUN/-/-/-/-/\n"
 
-color ./checker $ARG
+color ./checker 0 1 2 3 4 5 6 7 8 9
+# color ./checker $ARG
 printf "/-/-/-/-/END\-\-\-\-\n"

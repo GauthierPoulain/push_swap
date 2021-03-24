@@ -37,6 +37,8 @@ SRCS_C = \
 	checker_src/parsing/check.c \
 	checker_src/print_stacks.c \
 	checker_src/get_instru/get_instru.c \
+	checker_src/instru/utils.c \
+	checker_src/instru/swap.c \
 
 %.o: %.c $(HEADERS_C)
 	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"

@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/24 14:13:21 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/24 12:18:31 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/24 14:11:11 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/checker.h"
+#include "../includes/checker.h"
 
-int	main(int argc, char **argv)
+void	swap_a(t_checker *checker)
 {
-	t_checker	checker;
+	if (checker->stack_a.size > 1)
+		ft_swap(&checker->stack_a.stack[0], &checker->stack_a.stack[1]);
+}
 
-	parsing(&checker, argc, argv);
-	print_stacks(&checker);
-	// swap_all(&checker);
-	swap_all(&checker);
-	print_stacks(&checker);
-	// get_instru(&checker);
-	// print_instru(&checker);
-	close_checker(CLOSE_OK);
+void	swap_b(t_checker *checker)
+{
+	if (checker->stack_b.size > 1)
+		ft_swap(&checker->stack_b.stack[0], &checker->stack_b.stack[1]);
+}
+
+void	swap_all(t_checker *checker)
+{
+	swap_a(checker);
+	swap_b(checker);
 }

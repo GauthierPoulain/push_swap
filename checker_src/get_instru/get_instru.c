@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 10:44:23 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/24 10:54:35 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 14:00:27 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ void	get_instru(t_checker *checker)
 		ft_lstadd_back(&checker->instru, ft_lstnew(ft_strdup(*line)));
 		free(*line);
 	}
+	free(line);
 }
