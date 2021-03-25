@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 03:14:26 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/24 14:10:31 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/25 12:22:13 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ void	rotn1(t_stack *stack);
 
 void	ft_swap(int *a, int *b);
 
-void	swap_a(t_checker *checker);
-void	swap_b(t_checker *checker);
-void	swap_all(t_checker *checker);
+void	swap_sa(t_checker *checker);
+void	swap_sb(t_checker *checker);
+void	swap_ss(t_checker *checker);
+
+void	ft_push(t_stack *dst, t_stack *src);
 
 #endif

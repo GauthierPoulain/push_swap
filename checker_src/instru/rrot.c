@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   rrot.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 12:21:42 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/24 15:35:17 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/25 12:26:53 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/25 12:27:40 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-void	rot1(t_stack *stack)
-{
-	int		*st;
-	int		i;
-
-	st = stack->stack;
-	i = 0;
-	st[stack->size] = st[i];
-	while (i < stack->size)
-	{
-		st[i] = st[i + 1];
-		i++;
-	}
-}
-
 void	rotn1(t_stack *stack)
 {
-	int		*st;
+	int *st;
 	int		i;
 	int		buff;
 
@@ -44,25 +29,18 @@ void	rotn1(t_stack *stack)
 	st[0] = st[stack->size];
 }
 
-void	ft_swap(int *a, int *b)
+void	rotate_rra(t_checker *checker)
 {
-	int	salut;
-
-	salut = *a;
-	*a = *b;
-	*b = salut;
+	rotn1(&checker->stack_a);
 }
 
-// int		ft_pop(t_stack *stack)
-// {
-// 	int		buff;
+void	rotate_rrb(t_checker *checker)
+{
+	rotn1(&checker->stack_b);
+}
 
-// 	rotn1(stack);
-
-// 	return (buff);
-// }
-
-// void	ft_push(t_stack *stack, int value)
-// {
-// 	stack->size++;
-// }
+void	rotate_rrr(t_checker *checker)
+{
+	rotn1(&checker->stack_a);
+	rotn1(&checker->stack_b);
+}

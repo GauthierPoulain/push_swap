@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/25 12:19:56 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/25 12:21:15 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/25 12:29:25 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/checker.h"
+#include "../includes/checker.h"
 
-int	main(int argc, char **argv)
+void	ft_push(t_stack *src, t_stack *dst)
 {
-	t_checker	checker;
+	int		buff;
 
-	parsing(&checker, argc, argv);
-	print_stacks(&checker);
+	if (src->size < 1)
+		return;
+	buff = src->stack[0];
+	src->stack[0] = 0;
+	rot1(src);
+	rotn1(dst);
+	src->size--;
+	dst->size++;
+	dst->stack[0] = buff;
+}
 
-	ft_push(&checker.stack_a, &checker.stack_b);
+void	push_pa(t_checker *checker)
+{
+	ft_push(&checker->stack_b, &checker->stack_a);
+}
 
-	print_stacks(&checker);
-	// get_instru(&checker);
-	// print_instru(&checker);
-	close_checker(CLOSE_OK);
+void	push_pb(t_checker *checker)
+{
+	ft_push(&checker->stack_a, &checker->stack_b);
 }

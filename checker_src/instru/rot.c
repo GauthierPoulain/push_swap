@@ -1,28 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   rot.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/25 12:19:56 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/25 12:24:58 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/25 12:27:51 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/checker.h"
+#include "../includes/checker.h"
 
-int	main(int argc, char **argv)
+void	rot1(t_stack *stack)
 {
-	t_checker	checker;
+	int *st;
+	int		i;
 
-	parsing(&checker, argc, argv);
-	print_stacks(&checker);
+	st = stack->stack;
+	i = 0;
+	st[stack->size] = st[i];
+	while (i < stack->size)
+	{
+		st[i] = st[i + 1];
+		i++;
+	}
+}
 
-	ft_push(&checker.stack_a, &checker.stack_b);
+void	rotate_ra(t_checker *checker)
+{
+	rot1(&checker->stack_a);
+}
 
-	print_stacks(&checker);
-	// get_instru(&checker);
-	// print_instru(&checker);
-	close_checker(CLOSE_OK);
+void	rotate_rb(t_checker *checker)
+{
+	rot1(&checker->stack_b);
+}
+
+void	rotate_rr(t_checker *checker)
+{
+	rot1(&checker->stack_a);
+	rot1(&checker->stack_b);
 }
