@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_instru.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 10:44:23 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/25 12:44:47 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/25 12:32:35 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/25 12:34:22 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../libft.h"
 
-void	get_instru(t_checker *checker)
+bool	ft_strcmp(const char *s1, const char *s2)
 {
-	char	**line;
-	int		ret;
-
-	line = malloc(sizeof(char *));
-	ret = 1;
-	while (ret > 0)
-	{
-		ret = ft_get_next_line(0, line);
-		if (ret == -1)
-			close_checker(CLOSE_ERROR);
-		run_instru(checker, *line);
-		if (PRINT_STACKS)
-			print_stacks(checker);
-		free(*line);
-	}
-	free(line);
+	while (*s1 == *s2++)
+		if (*s1++ == 0)
+			return (false);
+	return (*(const unsigned char *)s1 - *(const unsigned char *)(s2 - 1));
 }

@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 17:00:43 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/25 11:24:41 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/25 12:48:31 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	print_stacks(t_checker *checker)
 	else
 		min = checker->stack_a.size;
 	i = 0;
+	printf("\e[1;1H\e[2J");
 	printf("|----------------------------------------------------|\n");
 	printf("|id    |stack a               |stack b               |\n");
 	printf("|      |size : %-15zd|size : %-15zd|\n", checker->stack_a.size,
@@ -34,16 +35,4 @@ void	print_stacks(t_checker *checker)
 		i++;
 	}
 	printf("|----------------------------------------------------|\n");
-}
-
-void	print_instru(t_checker *checker)
-{
-	t_list	*lst;
-
-	lst = checker->instru;
-	while (lst)
-	{
-		printf("%s, ", lst->content);
-		lst = lst->next;
-	}
 }

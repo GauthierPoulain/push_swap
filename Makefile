@@ -37,6 +37,7 @@ SRCS_C = \
 	checker_src/parsing/check.c \
 	checker_src/print_stacks.c \
 	checker_src/get_instru/get_instru.c \
+	checker_src/instru/run.c \
 	checker_src/instru/push.c \
 	checker_src/instru/rot.c \
 	checker_src/instru/rrot.c \

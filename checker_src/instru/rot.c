@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:24:58 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/25 12:27:51 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/25 12:46:45 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rot1(t_stack *stack)
 {
-	int *st;
+	int		*st;
 	int		i;
 
 	st = stack->stack;

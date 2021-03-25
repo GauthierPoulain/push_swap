@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:26:53 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/25 12:27:40 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/25 12:39:03 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rotn1(t_stack *stack)
 {
-	int *st;
+	int		*st;
 	int		i;
 	int		buff;
 

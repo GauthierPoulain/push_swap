@@ -40,6 +40,7 @@ SRCS = \
 	src/ft_lstnew.c \
 	src/ft_get_next_line.c \
 	src/ft_strdup.c \
+	src/ft_strcmp.c \
 
 %.o: %.c $(HEADER)
 	@printf "[ ${_PURPLE}${_BOLD}${NAME}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
