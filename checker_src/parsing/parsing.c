@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 16:05:40 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/25 11:19:15 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/25 14:21:40 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,31 @@ static bool	exist(t_stack stack, int value)
 	return (false);
 }
 
+static bool	check_atoi(char *str)
+{
+	bool	res;
+	bool	sign;
+
+	sign = false;
+	res = false;
+	while (*str)
+	{
+		if (ft_isdigit(*str))
+			res = true;
+		else
+		{
+			if (sign)
+				return (false);
+			sign = true;
+		}
+		if (res)
+			if (!ft_isdigit(*str))
+				return (false);
+		str++;
+	}
+	return (res);
+}
+
 static void	fill_stack_a(t_checker *checker, int argc, char **argv)
 {
 	int		i;
@@ -34,11 +59,12 @@ static void	fill_stack_a(t_checker *checker, int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
+		if (!check_atoi(argv[i]))
+			close_checker(CLOSE_ERROR);
 		checker->stack_a.stack[i - 1] = ft_atoi(argv[i]);
 		if (exist(checker->stack_a, checker->stack_a.stack[i - 1]))
 			close_checker(CLOSE_ERROR);
-		checker->stack_a.size = i;
-		i++;
+		checker->stack_a.size = i++;
 	}
 }
 
