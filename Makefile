@@ -20,50 +20,66 @@ _IPURPLE=\033[45m
 _ICYAN=\033[46m
 _IWHITE=\033[47m
 
-NAME_C = checker
-
-HEADERS_C = checker_src/includes/checker.h
+NAME = push_swap
 
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3
 
 MAKE = make --no-print-directory
 
+NAME_C = checker
+DIR_C = checker_src
+HEADERS_C = $(DIR_C)/includes/checker.h
 OBJS_C = $(SRCS_C:%.c=%.o)
 SRCS_C = \
-	checker_src/checker.c \
-	checker_src/handle_close.c \
-	checker_src/parsing/parsing.c \
-	checker_src/parsing/check.c \
-	checker_src/print_stacks.c \
-	checker_src/get_instru/get_instru.c \
-	checker_src/instru/run.c \
-	checker_src/instru/push.c \
-	checker_src/instru/rot.c \
-	checker_src/instru/rrot.c \
-	checker_src/instru/swap.c \
+	$(DIR_C)/checker.c \
+	$(DIR_C)/handle_close.c \
+	$(DIR_C)/parsing/parsing.c \
+	$(DIR_C)/parsing/check.c \
+	$(DIR_C)/print_stacks.c \
+	$(DIR_C)/get_instru/get_instru.c \
+	$(DIR_C)/instru/run.c \
+	$(DIR_C)/instru/push.c \
+	$(DIR_C)/instru/rot.c \
+	$(DIR_C)/instru/rrot.c \
+	$(DIR_C)/instru/swap.c \
+
+DIR_PS = push_swap_src
+NAME_PS = push_swap
+HEADERS_C = $(DIR_PS)/includes/push_swap.h
+OBJS_PS = $(SRCS_PS:%.c=%.o)
+SRCS_PS = \
+	$(DIR_PS)/push_swap.c \
 
 %.o: %.c $(HEADERS_C)
-	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
+	@printf "[ $(_PURPLE)$(_BOLD)$(NAME)$(_END) ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-all: $(NAME_C)
+all: $(NAME_C) $(NAME_PS)
 
 $(NAME_C): $(OBJS_C)
 	@$(MAKE) -C ./libft
-	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ building ] $(_BLUE)$(_BOLD)$(NAME_C)$(_END)\n"
+	@printf "[ $(_PURPLE)$(_BOLD)$(NAME)$(_END) ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ building ] $(_BLUE)$(_BOLD)$(NAME_C)$(_END)\n"
 	@$(CC) $(CFLAGS) -o $(NAME_C) $(OBJS_C) ./libft/libft.a
-	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_BLUE)$(_BOLD)!$(_END) ][ done ]\n"
+	@printf "[ $(_PURPLE)$(_BOLD)$(NAME)$(_END) ] > [ $(_BLUE)$(_BOLD)!$(_END) ][ done ]\n"
+
+$(NAME_PS): $(OBJS_PS)
+	@$(MAKE) -C ./libft
+	@printf "[ $(_PURPLE)$(_BOLD)$(NAME_PS)$(_END) ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ building ] $(_BLUE)$(_BOLD)$(NAME_PS)$(_END)\n"
+	@$(CC) $(CFLAGS) -o $(NAME_PS) $(OBJS_PS) ./libft/libft.a
+	@printf "[ $(_PURPLE)$(_BOLD)$(NAME_PS)$(_END) ] > [ $(_BLUE)$(_BOLD)!$(_END) ][ done ]\n"
 
 clean:
 	@$(MAKE) clean -C ./libft
-	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(_BLUE)$(_BOLD)objs $(_END)\n"
+	@printf "[ $(_PURPLE)$(_BOLD)$(NAME)$(_END) ] > [ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(_BLUE)$(_BOLD)objs $(_END)\n"
 	@$(RM) $(OBJS_C)
 
 fclean: clean
 	@$(MAKE) fclean -C ./libft
-	@printf "[ ${_PURPLE}${_BOLD}${NAME_C}${_END} ] > [ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(_BLUE)$(_BOLD)$(NAME_C) $(_END)\n"
+	@printf "[ $(_PURPLE)$(_BOLD)$(NAME)$(_END) ] > [ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(_BLUE)$(_BOLD)$(NAME_C) $(_END)\n"
 	@$(RM) $(NAME_C)
+	@printf "[ $(_PURPLE)$(_BOLD)$(NAME)$(_END) ] > [ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(_BLUE)$(_BOLD)$(NAME_PS) $(_END)\n"
+	@$(RM) $(NAME_PS)
 
 re: fclean
 re: all
