@@ -1,36 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_instru.c                                       :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 10:44:23 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/25 12:50:46 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/25 12:51:11 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/25 12:53:27 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "./includes/checker.h"
 
-void	get_instru(t_checker *checker)
-{
-	char	**line;
-	int		ret;
 
-	line = malloc(sizeof(char *));
-	ret = 1;
-	while (ret > 0)
-	{
-		ret = ft_get_next_line(0, line);
-		if (ret == -1)
-			close_checker(CLOSE_ERROR);
-		else if (ret == 1)
-		{
-		run_instru(checker, *line);
-		if (PRINT_STACKS)
-			print_stacks(checker);
-		}
-		free(*line);
-	}
-	free(line);
-}
