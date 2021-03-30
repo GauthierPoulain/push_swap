@@ -6,16 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:38:39 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 17:32:30 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 10:30:03 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-// push les deux plus petits sur b
-// trier a avec algo pour 2 ou 3
-// trier b a l'envers
-// push dans a
 
 void	push_2_mins(t_checker *checker)
 {
@@ -27,11 +22,13 @@ void	push_2_mins(t_checker *checker)
 	i = -1;
 	id = 0;
 	while (++i < checker->stack_a.size)
+	{
 		if (checker->stack_a.stack[i] < min)
-			{
-				id = i;
-				min = checker->stack_a.stack[i];
-			}
+		{
+			id = i;
+			min = checker->stack_a.stack[i];
+		}
+	}
 	if (i < checker->stack_a.size / 2)
 		while (checker->stack_a.stack[0] != min)
 			do_move(checker, "ra");
