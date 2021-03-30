@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 13:31:41 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 14:57:02 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 16:43:18 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,6 @@ void		swap_sb(t_checker *checker);
 void		swap_ss(t_checker *checker);
 
 void		print_stacks(t_checker *checker);
-bool		is_sorted(t_checker *checker);
+bool		is_sorted(t_stack stack);
 
 #endif

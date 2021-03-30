@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 15:26:02 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 16:43:45 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,10 @@ int	main(int argc, char **argv)
 	parsing(&checker, argc, argv);
 	if (PRINT_STACKS)
 		print_stacks(&checker);
-	if (is_sorted(&checker))
+	if (is_sorted(checker.stack_a))
 		close_checker(CLOSE_OK);
 	get_instru(&checker);
-	if (is_sorted(&checker))
+	if (is_sorted(checker.stack_a))
 		close_checker(CLOSE_OK);
 	close_checker(CLOSE_KO);
 }

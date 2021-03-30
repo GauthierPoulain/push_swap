@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:34:32 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 15:28:11 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 17:34:48 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ static void	print_move(char *move)
 {
 	write(1, move, ft_strlen(move));
 	write(1, "\n", 1);
-	write(2, move, ft_strlen(move));
-	write(2, "\n", 1);
+	// write(2, move, ft_strlen(move));
+	// write(2, "\n", 1);
 }
 
 void	do_move(t_checker *checker, char *move)
@@ -75,12 +75,19 @@ void	do_move(t_checker *checker, char *move)
 
 void	get_algo(t_checker *checker)
 {
+	if (is_sorted(checker->stack_a))
+		return ;
 	if (checker->stack_a.size == 2)
 		sort_two(checker);
+	else if (checker->stack_a.size == 3)
+		sort_three(checker);
+	else if (checker->stack_a.size <= 5)
+		sort_four_five(checker);
 	else
 		close_push_swap(CLOSE_ERROR);
-	if (!is_sorted(checker))
-		get_algo(checker);
+	if (checker->stack_b.size)
+		close_push_swap(CLOSE_ERROR);
+	get_algo(checker);
 }
 
 int	main(int argc, char **argv)
