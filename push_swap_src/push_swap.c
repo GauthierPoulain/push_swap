@@ -6,13 +6,13 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:34:32 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 15:01:42 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 15:28:11 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	close_checker(int code)
+void	close_push_swap(int code)
 {
 	if (code == CLOSE_ERROR)
 	{
@@ -36,11 +36,60 @@ void	close_checker(int code)
 	}
 }
 
+static void	print_move(char *move)
+{
+	write(1, move, ft_strlen(move));
+	write(1, "\n", 1);
+	write(2, move, ft_strlen(move));
+	write(2, "\n", 1);
+}
+
+void	do_move(t_checker *checker, char *move)
+{
+	if (!ft_strcmp("sa", move))
+		swap_sa(checker);
+	else if (!ft_strcmp("sb", move))
+		swap_sb(checker);
+	else if (!ft_strcmp("ss", move))
+		swap_ss(checker);
+	else if (!ft_strcmp("pa", move))
+		push_pa(checker);
+	else if (!ft_strcmp("pb", move))
+		push_pb(checker);
+	else if (!ft_strcmp("ra", move))
+		rotate_ra(checker);
+	else if (!ft_strcmp("rb", move))
+		rotate_rb(checker);
+	else if (!ft_strcmp("rr", move))
+		rotate_rr(checker);
+	else if (!ft_strcmp("rra", move))
+		rotate_rra(checker);
+	else if (!ft_strcmp("rrb", move))
+		rotate_rrb(checker);
+	else if (!ft_strcmp("rrr", move))
+		rotate_rrr(checker);
+	else
+		close_push_swap(CLOSE_ERROR);
+	print_move(move);
+}
+
+void	get_algo(t_checker *checker)
+{
+	if (checker->stack_a.size == 2)
+		sort_two(checker);
+	else
+		close_push_swap(CLOSE_ERROR);
+	if (!is_sorted(checker))
+		get_algo(checker);
+}
+
 int	main(int argc, char **argv)
 {
 	t_checker	checker;
 
 	parsing(&checker, argc, argv);
-	printf("salut\n");
+	get_algo(&checker);
+	if (PRINT_STACKS)
+		print_stacks(&checker);
 	return (0);
 }

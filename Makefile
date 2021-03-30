@@ -44,6 +44,7 @@ SRCS_PS = \
 	$(DIR_PS)/push_swap.c \
 	$(DIR_PS)/parsing/check.c \
 	$(DIR_PS)/parsing/parsing.c \
+	$(DIR_PS)/sorting/two.c \
 
 %.o: %.c $(HEADERS_C)
 	@printf "[ $(_PURPLE)$(_BOLD)$(NAME)$(_END) ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"

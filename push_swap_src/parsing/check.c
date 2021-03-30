@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 16:03:49 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 15:02:43 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 15:18:38 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	parsing_check(int argc, char **argv)
 	int		i;
 
 	if (argc < 2)
-		close_checker(CLOSE_ERROR);
+		close_push_swap(CLOSE_ERROR);
 	i = 1;
 	while (i < argc)
 	{
 		if (!check_arg(argv[i]))
-			close_checker(CLOSE_ERROR);
+			close_push_swap(CLOSE_ERROR);
 		i++;
 	}
 }

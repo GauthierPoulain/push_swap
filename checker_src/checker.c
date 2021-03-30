@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 14:52:20 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 15:26:02 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,29 +36,29 @@ void	close_checker(int code)
 	}
 }
 
-void	run_instru(t_checker *checker, char *instr)
+void	run_instru(t_checker *checker, char *move)
 {
-	if (!ft_strcmp("sa", instr))
+	if (!ft_strcmp("sa", move))
 		swap_sa(checker);
-	else if (!ft_strcmp("sb", instr))
+	else if (!ft_strcmp("sb", move))
 		swap_sb(checker);
-	else if (!ft_strcmp("ss", instr))
+	else if (!ft_strcmp("ss", move))
 		swap_ss(checker);
-	else if (!ft_strcmp("pa", instr))
+	else if (!ft_strcmp("pa", move))
 		push_pa(checker);
-	else if (!ft_strcmp("pb", instr))
+	else if (!ft_strcmp("pb", move))
 		push_pb(checker);
-	else if (!ft_strcmp("ra", instr))
+	else if (!ft_strcmp("ra", move))
 		rotate_ra(checker);
-	else if (!ft_strcmp("rb", instr))
+	else if (!ft_strcmp("rb", move))
 		rotate_rb(checker);
-	else if (!ft_strcmp("rr", instr))
+	else if (!ft_strcmp("rr", move))
 		rotate_rr(checker);
-	else if (!ft_strcmp("rra", instr))
+	else if (!ft_strcmp("rra", move))
 		rotate_rra(checker);
-	else if (!ft_strcmp("rrb", instr))
+	else if (!ft_strcmp("rrb", move))
 		rotate_rrb(checker);
-	else if (!ft_strcmp("rrr", instr))
+	else if (!ft_strcmp("rrr", move))
 		rotate_rrr(checker);
 	else
 		close_checker(CLOSE_ERROR);
@@ -71,6 +71,8 @@ int	main(int argc, char **argv)
 	parsing(&checker, argc, argv);
 	if (PRINT_STACKS)
 		print_stacks(&checker);
+	if (is_sorted(&checker))
+		close_checker(CLOSE_OK);
 	get_instru(&checker);
 	if (is_sorted(&checker))
 		close_checker(CLOSE_OK);
