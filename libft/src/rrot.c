@@ -6,11 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:26:53 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/25 12:39:03 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 13:32:45 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../libft.h"
 
 void	rotn1(t_stack *stack)
 {

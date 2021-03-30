@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_instru.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 10:44:23 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/25 12:56:28 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/25 12:21:15 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/30 13:32:38 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../libft.h"
 
-void	get_instru(t_checker *checker)
+void	ft_push(t_stack *src, t_stack *dst)
 {
-	char	**line;
-	int		ret;
+	int		buff;
 
-	line = malloc(sizeof(char *));
-	ret = 1;
-	while (ret > 0)
-	{
-		ret = ft_get_next_line(0, line);
-		if (ret == -1)
-			close_checker(CLOSE_ERROR);
-		else if (ret == 1)
-		{
-			run_instru(checker, *line);
-			if (PRINT_STACKS)
-				print_stacks(checker);
-		}
-		free(*line);
-	}
-	free(line);
+	if (src->size < 1)
+		return ;
+	buff = src->stack[0];
+	src->stack[0] = 0;
+	rot1(src);
+	rotn1(dst);
+	src->size--;
+	dst->size++;
+	dst->stack[0] = buff;
+}
+
+void	push_pa(t_checker *checker)
+{
+	ft_push(&checker->stack_b, &checker->stack_a);
+}
+
+void	push_pb(t_checker *checker)
+{
+	ft_push(&checker->stack_a, &checker->stack_b);
 }

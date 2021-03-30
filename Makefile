@@ -33,16 +33,8 @@ HEADERS_C = $(DIR_C)/includes/checker.h
 OBJS_C = $(SRCS_C:%.c=%.o)
 SRCS_C = \
 	$(DIR_C)/checker.c \
-	$(DIR_C)/handle_close.c \
 	$(DIR_C)/parsing/parsing.c \
 	$(DIR_C)/parsing/check.c \
-	$(DIR_C)/print_stacks.c \
-	$(DIR_C)/get_instru/get_instru.c \
-	$(DIR_C)/instru/run.c \
-	$(DIR_C)/instru/push.c \
-	$(DIR_C)/instru/rot.c \
-	$(DIR_C)/instru/rrot.c \
-	$(DIR_C)/instru/swap.c \
 
 DIR_PS = push_swap_src
 NAME_PS = push_swap

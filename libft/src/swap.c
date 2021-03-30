@@ -6,11 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 12:18:31 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/25 12:28:56 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 13:32:48 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../libft.h"
 
 void	ft_swap(int *a, int *b)
 {

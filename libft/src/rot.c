@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_close.c                                     :+:      :+:    :+:   */
+/*   rot.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 03:24:46 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/23 16:19:54 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/25 12:24:58 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/30 13:32:42 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/checker.h"
+#include "../libft.h"
 
-void	close_checker(int code)
+void	rot1(t_stack *stack)
 {
-	if (code == CLOSE_ERROR)
+	int		*st;
+	int		i;
+
+	st = stack->stack;
+	i = 0;
+	st[stack->size] = st[i];
+	while (i < stack->size)
 	{
-		ft_print_err("Error\n");
-		exit(EXIT_FAILURE);
+		st[i] = st[i + 1];
+		i++;
 	}
-	else if (code == CLOSE_OK)
-	{
-		printf("OK\n");
-		exit(EXIT_SUCCESS);
-	}
-	else if (code == CLOSE_KO)
-	{
-		printf("KO\n");
-		exit(EXIT_SUCCESS);
-	}
-	else
-	{
-		printf("unhandled close code\n");
-		exit(EXIT_FAILURE);
-	}
+}
+
+void	rotate_ra(t_checker *checker)
+{
+	rot1(&checker->stack_a);
+}
+
+void	rotate_rb(t_checker *checker)
+{
+	rot1(&checker->stack_b);
+}
+
+void	rotate_rr(t_checker *checker)
+{
+	rot1(&checker->stack_a);
+	rot1(&checker->stack_b);
 }
