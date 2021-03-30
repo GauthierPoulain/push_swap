@@ -6,18 +6,18 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 16:05:40 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 15:18:50 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 10:14:19 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static bool	exist(t_stack stack, int value)
+static bool	exist(t_stack stack, int value, int range)
 {
 	int	i;
 
 	i = -1;
-	while (++i < stack.size)
+	while (++i < range)
 		if (stack.stack[i] == value)
 			return (true);
 	return (false);
@@ -56,13 +56,14 @@ static void	fill_stack_a(t_checker *checker, int argc, char **argv)
 	if (!checker->stack_a.stack)
 		close_push_swap(CLOSE_ERROR);
 	checker->stack_a.stack = checker->stack_a.stack;
+	checker->stack_a.size = argc - 1;
 	i = 1;
 	while (i < argc)
 	{
 		if (!check_atoi(argv[i]))
 			close_push_swap(CLOSE_ERROR);
 		checker->stack_a.stack[i - 1] = ft_atoi(argv[i]);
-		if (exist(checker->stack_a, checker->stack_a.stack[i - 1]))
+		if (exist(checker->stack_a, checker->stack_a.stack[i - 1], i - 1))
 			close_push_swap(CLOSE_ERROR);
 		checker->stack_a.size = i++;
 	}

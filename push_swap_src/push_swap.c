@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:34:32 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 17:34:48 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 10:07:44 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ static void	print_move(char *move)
 {
 	write(1, move, ft_strlen(move));
 	write(1, "\n", 1);
-	// write(2, move, ft_strlen(move));
-	// write(2, "\n", 1);
 }
 
 void	do_move(t_checker *checker, char *move)

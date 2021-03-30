@@ -1,4 +1,6 @@
 *.o
 *.a
+*.out
+DS.Store
 checker
 push_swap

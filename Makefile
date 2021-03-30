@@ -79,12 +79,9 @@ fclean: clean
 	@$(RM) $(NAME_PS)
 
 re: fclean
-re: all
+	@$(MAKE) all
 
 norm:
-	norminette
-
-test:
-	./test.sh
+	@norminette
 
 .PHONY: all clean fclean re test_c

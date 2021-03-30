@@ -1,15 +1,14 @@
 #!/bin/bash
-color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
-clear 
-
+clear
 make
-
-ARG=`ruby -e "puts (1..3).to_a.shuffle.join(' ')"`
-# echo "test with $ARG"
-
-printf "\-\-\-\-\RUN/-/-/-/-/\n"
-
-# color ./checker 1 3 2
-# color ./checker $ARG
-color ./push_swap $ARGS
-printf "/-/-/-/-/END\-\-\-\-\n"
+while true;
+do
+ARG=`ruby -e "puts (1..$1).to_a.shuffle.join(' ')"`
+RET=$(./push_swap $ARG  | ./checker $ARG)
+echo $RET
+if [ "$RET" != "OK" ]
+then
+	echo $ARG
+	read -n 1 k <&1
+fi
+done;
