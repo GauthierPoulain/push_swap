@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:31:59 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 13:21:55 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 15:01:47 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "../../libft/libft.h"
 
-
+void	parsing(t_checker *checker, int argc, char **argv);
+void	parsing_check(int argc, char **argv);
+void	close_checker(int code);
 
 #endif

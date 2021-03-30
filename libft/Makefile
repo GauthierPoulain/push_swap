@@ -45,6 +45,8 @@ SRCS = \
 	src/rot.c \
 	src/rrot.c \
 	src/swap.c \
+	src/is_sorted.c \
+	src/print_stacks.c \
 
 %.o: %.c $(HEADER)
 	@printf "[ ${_PURPLE}${_BOLD}${NAME}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"

@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 13:31:41 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 13:21:24 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 14:57:02 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# define 	PRINT_STACKS	0
+
+# define CLOSE_OK		0
+# define CLOSE_KO		1
+# define CLOSE_ERROR	2
 
 typedef struct s_list
 {
@@ -83,5 +89,8 @@ void		ft_swap(int *a, int *b);
 void		swap_sa(t_checker *checker);
 void		swap_sb(t_checker *checker);
 void		swap_ss(t_checker *checker);
+
+void		print_stacks(t_checker *checker);
+bool		is_sorted(t_checker *checker);
 
 #endif

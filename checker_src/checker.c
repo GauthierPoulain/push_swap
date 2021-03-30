@@ -6,35 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 13:34:34 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 14:52:20 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/checker.h"
-
-void	print_stacks(t_checker *checker)
-{
-	int		i;
-	int		min;
-
-	if (checker->stack_a.size < checker->stack_b.size)
-		min = checker->stack_b.size;
-	else
-		min = checker->stack_a.size;
-	i = 0;
-	printf("|----------------------------------------------------|\n");
-	printf("|id    |stack a               |stack b               |\n");
-	printf("|      |size : %-15zd|size : %-15zd|\n", checker->stack_a.size,
-		checker->stack_b.size);
-	printf("|----------------------------------------------------|\n");
-	while (i < min)
-	{
-		printf("|%-6d|%-22d|%-22d|\n", i, checker->stack_a.stack[i],
-			checker->stack_b.stack[i]);
-		i++;
-	}
-	printf("|----------------------------------------------------|\n");
-}
 
 void	close_checker(int code)
 {
@@ -86,17 +62,6 @@ void	run_instru(t_checker *checker, char *instr)
 		rotate_rrr(checker);
 	else
 		close_checker(CLOSE_ERROR);
-}
-
-bool	is_sorted(t_checker *checker)
-{
-	int		i;
-
-	i = -1;
-	while (++i < checker->stack_a.size - 1)
-		if (checker->stack_a.stack[i] >= checker->stack_a.stack[i + 1])
-			return (false);
-	return (true);
 }
 
 int	main(int argc, char **argv)

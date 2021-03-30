@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 03:14:26 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 14:56:55 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/30 14:52:26 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/30 14:52:45 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "../libft.h"
 
-# include "../../libft/libft.h"
+bool	is_sorted(t_checker *checker)
+{
+	int		i;
 
-void	close_checker(int code);
-
-void	parsing(t_checker *checker, int argc, char **argv);
-void	parsing_check(int argc, char **argv);
-void	print_stacks(t_checker *checker);
-void	get_instru(t_checker *checker);
-void	run_instru(t_checker *checker, char *instr);
-
-#endif
+	i = -1;
+	while (++i < checker->stack_a.size - 1)
+		if (checker->stack_a.stack[i] >= checker->stack_a.stack[i + 1])
+			return (false);
+	return (true);
+}

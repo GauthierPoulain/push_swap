@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 03:14:26 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 14:56:55 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/23 16:03:49 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/30 15:02:43 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "../includes/push_swap.h"
 
-# include "../../libft/libft.h"
+static bool	check_arg(char *s)
+{
+	while (*s)
+	{
+		if (!ft_isdigit(*s) && *s != '-' && *s != '+')
+			return (false);
+		s++;
+	}
+	return (true);
+}
 
-void	close_checker(int code);
+void	parsing_check(int argc, char **argv)
+{
+	int		i;
 
-void	parsing(t_checker *checker, int argc, char **argv);
-void	parsing_check(int argc, char **argv);
-void	print_stacks(t_checker *checker);
-void	get_instru(t_checker *checker);
-void	run_instru(t_checker *checker, char *instr);
-
-#endif
+	if (argc < 2)
+		close_checker(CLOSE_ERROR);
+	i = 1;
+	while (i < argc)
+	{
+		if (!check_arg(argv[i]))
+			close_checker(CLOSE_ERROR);
+		i++;
+	}
+}
