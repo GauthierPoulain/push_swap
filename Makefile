@@ -86,4 +86,4 @@ re: fclean
 norm:
 	@norminette
 
-.PHONY: all clean fclean re test_c
+.PHONY: all clean fclean re norm
