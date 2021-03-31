@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:34:32 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 15:55:16 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 16:12:12 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	get_algo(t_checker *checker)
 		close_program(CLOSE_ERROR);
 	if (checker->stack_b.size)
 		close_program(CLOSE_ERROR);
-	get_algo(checker);
+	// get_algo(checker);
 }
 
 int	main(int argc, char **argv)
@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 	t_checker	checker;
 
 	parsing(&checker, argc, argv);
-	print_stacks(&checker);
+	// print_stacks(&checker);
 	get_algo(&checker);
 	close_program(CLOSE_NOPRINT);
 }
