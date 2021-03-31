@@ -23,7 +23,9 @@ _IWHITE=\033[47m
 NAME = push_swap
 
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
+# CFLAGS += $(CDEFFLAGS) -O3 -fno-builtin
+CFLAGS += $(CDEFFLAGS) -g -fsanitize=address
 
 MAKE = make --no-print-directory
 
@@ -72,6 +74,7 @@ clean:
 	@$(MAKE) clean -C ./libft
 	@printf "[ $(_PURPLE)$(_BOLD)$(NAME)$(_END) ] > [ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(_BLUE)$(_BOLD)objs $(_END)\n"
 	@$(RM) $(OBJS_C)
+	@$(RM) $(OBJS_PS)
 
 fclean: clean
 	@$(MAKE) fclean -C ./libft

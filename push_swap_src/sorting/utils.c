@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 10:36:05 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 11:22:05 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 13:23:55 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,14 @@ int	get_max(t_stack stack)
 	return (max);
 }
 
-int		ft_abs(int nb)
+int	ft_abs(int nb)
 {
 	if (nb > 0)
 		return (nb);
 	return (nb * -1);
 }
 
-int		get_closer(t_stack stack, int value)
+int	get_closer(t_stack stack, int value)
 {
 	int		closer;
 	int		i;

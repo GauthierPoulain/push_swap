@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 10:31:49 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 12:24:23 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 13:12:40 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	sort_six_to_hundred(t_checker *checker)
 	int		size;
 
 
+	print_stacks(checker);
 	size = checker->stack_a.size;
 	med = get_median(checker->stack_a);
 	i = 0;
@@ -77,4 +78,5 @@ void	sort_six_to_hundred(t_checker *checker)
 	}
 	print_stacks(checker);
 	sort(checker);
+	print_stacks(checker);
 }

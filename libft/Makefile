@@ -23,7 +23,9 @@ _IWHITE=\033[47m
 NAME = libft.a
 
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
+# CFLAGS += $(CDEFFLAGS) -O3 -fno-builtin
+CFLAGS += $(CDEFFLAGS) -g -fsanitize=address
 
 MAKE = make --no-print-directory
 

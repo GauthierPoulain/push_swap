@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 16:43:45 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 13:11:11 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@ void	close_checker(int code)
 {
 	if (code == CLOSE_ERROR)
 	{
-		ft_print_err("Error\n");
+		ft_putstr_fd(2, "Error\n");
 		exit(EXIT_FAILURE);
 	}
 	else if (code == CLOSE_OK)
 	{
-		printf("OK\n");
+		ft_putstr_fd(1, "OK\n");
 		exit(EXIT_SUCCESS);
 	}
 	else if (code == CLOSE_KO)
 	{
-		printf("KO\n");
+		ft_putstr_fd(1, "KO\n");
 		exit(EXIT_SUCCESS);
 	}
 	else
 	{
-		printf("unhandled close code\n");
+		ft_putstr_fd(1, "unhandled close code\n");
 		exit(EXIT_FAILURE);
 	}
 }
@@ -69,8 +69,6 @@ int	main(int argc, char **argv)
 	t_checker	checker;
 
 	parsing(&checker, argc, argv);
-	if (PRINT_STACKS)
-		print_stacks(&checker);
 	if (is_sorted(checker.stack_a))
 		close_checker(CLOSE_OK);
 	get_instru(&checker);

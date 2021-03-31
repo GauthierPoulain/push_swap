@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 16:03:49 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 13:26:05 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 13:11:48 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,7 @@ void	get_instru(t_checker *checker)
 		if (ret == -1)
 			close_checker(CLOSE_ERROR);
 		else if (ret == 1)
-		{
 			run_instru(checker, *line);
-			if (PRINT_STACKS)
-				print_stacks(checker);
-		}
 		free(*line);
 	}
 	free(line);
