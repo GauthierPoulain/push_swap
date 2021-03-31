@@ -4,8 +4,11 @@ make
 while true;
 do
 ARG=`ruby -e "puts (1..$1).to_a.shuffle.join(' ')"`
-RET=$(./push_swap $ARG  | ./checker $ARG)
+NB=$(./push_swap $ARG | wc -l)
+RET=$(./push_swap $ARG | ./checker $ARG)
 echo $RET
+echo $ARG
+echo $NB
 if [ "$RET" != "OK" ]
 then
 	echo $ARG
