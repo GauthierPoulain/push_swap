@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 14:50:42 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 14:51:54 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 11:07:41 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,16 @@ void	print_stacks(t_checker *checker)
 	printf("|----------------------------------------------------|\n");
 	while (i < min)
 	{
-		printf("|%-6d|%-22d|%-22d|\n", i, checker->stack_a.stack[i],
-			checker->stack_b.stack[i]);
+		printf("|%-6d", i);
+		if (i < checker->stack_a.size)
+			printf("|%-22d", checker->stack_a.stack[i]);
+		else
+			printf("|%-22c", ' ');
+		if (i < checker->stack_b.size)
+			printf("|%-22d", checker->stack_b.stack[i]);
+		else
+			printf("|%-22c", ' ');
+		printf("|\n");
 		i++;
 	}
 	printf("|----------------------------------------------------|\n");
