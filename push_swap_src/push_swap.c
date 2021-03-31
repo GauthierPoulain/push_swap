@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:34:32 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 10:40:47 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 12:51:00 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,24 @@ void	close_push_swap(int code)
 {
 	if (code == CLOSE_ERROR)
 	{
-		ft_print_err("Error\n");
+		ft_putstr_fd(2, "Error\n");
 		exit(EXIT_FAILURE);
 	}
 	else if (code == CLOSE_OK)
 	{
-		printf("OK\n");
+		ft_putstr_fd(1, "OK\n");
 		exit(EXIT_SUCCESS);
 	}
 	else if (code == CLOSE_KO)
 	{
-		printf("KO\n");
+		ft_putstr_fd(1, "KO\n");
 		exit(EXIT_SUCCESS);
 	}
 	else
 	{
-		printf("unhandled close code\n");
+		ft_putstr_fd(2, "unhandled exit code\n");
 		exit(EXIT_FAILURE);
 	}
-}
-
-static void	print_move(char *move)
-{
-	write(1, move, ft_strlen(move));
-	write(1, "\n", 1);
 }
 
 void	do_move(t_checker *checker, char *move)
@@ -68,7 +62,7 @@ void	do_move(t_checker *checker, char *move)
 		rotate_rrr(checker);
 	else
 		close_push_swap(CLOSE_ERROR);
-	print_move(move);
+	ft_putendl_fd(1, move);
 }
 
 void	get_algo(t_checker *checker)

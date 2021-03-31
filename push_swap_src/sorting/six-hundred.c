@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 10:31:49 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 11:15:57 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 12:24:23 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,22 @@ static void		sort(t_checker *checker)
 {
 	int		min;
 	int		max;
+	int		closer;
 	
 	while (checker->stack_b.size > 0)
 	{
-		min = get_min(checker->stack_a);
-		max = get_max(checker->stack_a);
-		
-		
+		min = get_min(checker->stack_b);
+		max = get_max(checker->stack_b);
+		closer = get_closer(checker->stack_b, checker->stack_a.stack[0]);
+		if (checker->stack_b.stack[0] == min)
+			do_move(checker, "pa");
+		else if (checker->stack_b.stack[0] == max)
+		{
+			do_move(checker, "pa");
+			do_move(checker, "ra");
+		}
+		else
+			do_move(checker, "rb");
 	}
 }
 
@@ -65,7 +74,7 @@ void	sort_six_to_hundred(t_checker *checker)
 			do_move(checker, "ra");
 			i++;
 		}
-		print_stacks(checker);
 	}
+	print_stacks(checker);
 	sort(checker);
 }

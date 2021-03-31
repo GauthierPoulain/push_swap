@@ -23,7 +23,7 @@ _IWHITE=\033[47m
 NAME = libft.a
 
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 
 MAKE = make --no-print-directory
 
@@ -47,6 +47,7 @@ SRCS = \
 	src/swap.c \
 	src/is_sorted.c \
 	src/print_stacks.c \
+	src/ft_putstr_fd.c \
 
 %.o: %.c $(HEADER)
 	@printf "[ ${_PURPLE}${_BOLD}${NAME}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"

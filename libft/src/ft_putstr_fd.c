@@ -1,44 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot.c                                              :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 12:24:58 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 12:52:03 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/31 12:47:13 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/31 12:49:38 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	rot1(t_stack *stack)
+void	ft_putstr_fd(int fd, char *str)
 {
-	int		*st;
-	int		i;
-
-	st = stack->stack;
-	i = 0;
-	st[stack->size - 1] = st[i];
-	while (i < stack->size - 1)
-	{
-		st[i] = st[i + 1];
-		i++;
-	}
+	write(fd, str, ft_strlen(str));
 }
 
-void	rotate_ra(t_checker *checker)
+void	ft_putendl_fd(int fd, char *str)
 {
-	rot1(&checker->stack_a);
-}
-
-void	rotate_rb(t_checker *checker)
-{
-	rot1(&checker->stack_b);
-}
-
-void	rotate_rr(t_checker *checker)
-{
-	rot1(&checker->stack_a);
-	rot1(&checker->stack_b);
+	write(fd, str, ft_strlen(str));
+	write(fd, "\n", 1);
 }

@@ -23,7 +23,7 @@ _IWHITE=\033[47m
 NAME = push_swap
 
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 
 MAKE = make --no-print-directory
 
