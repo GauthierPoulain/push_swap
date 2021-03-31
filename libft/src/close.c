@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   close.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 16:03:49 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 15:57:44 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/03/31 15:53:59 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/03/31 15:54:26 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../libft.h"
 
-static bool	check_arg(char *s)
+void	close_program(int code)
 {
-	while (*s)
+	if (code == CLOSE_ERROR)
 	{
-		if (!ft_isdigit(*s) && *s != '-' && *s != '+')
-			return (false);
-		s++;
+		ft_putstr_fd(2, "Error\n");
+		exit(EXIT_FAILURE);
 	}
-	return (true);
-}
-
-void	parsing_check(int argc, char **argv)
-{
-	int		i;
-
-	if (argc < 2)
-		close_program(CLOSE_ERROR);
-	i = 1;
-	while (i < argc)
+	else if (code == CLOSE_OK)
 	{
-		if (!check_arg(argv[i]))
-			close_program(CLOSE_ERROR);
-		i++;
+		ft_putstr_fd(1, "OK\n");
+		exit(EXIT_SUCCESS);
 	}
+	else if (code == CLOSE_KO)
+	{
+		ft_putstr_fd(1, "KO\n");
+		exit(EXIT_SUCCESS);
+	}
+	else if (code == CLOSE_NOPRINT)
+		exit(EXIT_SUCCESS);
+	ft_putstr_fd(2, "unhandled exit code\n");
+	exit(EXIT_FAILURE);
 }

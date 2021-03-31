@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 10:31:49 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 15:39:35 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 15:57:31 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	get_median(t_stack stack)
 
 	dup = malloc(sizeof(int) * stack.size);
 	if (!dup)
-		close_push_swap(CLOSE_ERROR);
+		close_program(CLOSE_ERROR);
 	i = stack.size;
 	while (--i >= 0)
 		dup[i] = stack.stack[i];
@@ -32,34 +32,25 @@ static int	get_median(t_stack stack)
 
 void		sort(t_checker *checker)
 {
-	// int		min;
-	// int		max;
-	// int		closer;
+	int		min;
+	int		max;
+	int		closer;
 	
-	// while (checker->stack_b.size > 0)
-	// {
-		// min = get_min(checker->stack_b);
-		// max = get_max(checker->stack_b);
-		// closer = get_closer(checker->stack_b, checker->stack_a.stack[0]);
-		// if (checker->stack_b.stack[0] == min)
-		// 	do_move(checker, "pa");
-		// else if (checker->stack_b.stack[0] == max)
-		// {
-		// 	do_move(checker, "pa");
-		// 	do_move(checker, "ra");
-		// }
-		// else
-		(void)checker;
-		print_stacks(checker);
-		do_move(checker, "pa");
-		print_stacks(checker);
-		do_move(checker, "pa");
-		print_stacks(checker);
-		do_move(checker, "pa");
-		print_stacks(checker);
-		do_move(checker, "pa");
-		print_stacks(checker);
-	// }
+	while (checker->stack_b.size > 0)
+	{
+		min = get_min(checker->stack_b);
+		max = get_max(checker->stack_b);
+		closer = get_closer(checker->stack_b, checker->stack_a.stack[0]);
+		if (checker->stack_b.stack[0] == min)
+			do_move(checker, "pa");
+		else if (checker->stack_b.stack[0] == max)
+		{
+			do_move(checker, "pa");
+			do_move(checker, "ra");
+		}
+		else
+			do_move(checker, "rb");
+	}
 }
 
 static bool	have_higher(t_stack stack, int min)

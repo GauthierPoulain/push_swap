@@ -6,34 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:34:32 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 15:52:54 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 15:55:16 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
-
-void	close_push_swap(int code)
-{
-	if (code == CLOSE_ERROR)
-	{
-		ft_putstr_fd(2, "Error\n");
-		exit(EXIT_FAILURE);
-	}
-	else if (code == CLOSE_OK)
-	{
-		ft_putstr_fd(1, "OK\n");
-		exit(EXIT_SUCCESS);
-	}
-	else if (code == CLOSE_KO)
-	{
-		ft_putstr_fd(1, "KO\n");
-		exit(EXIT_SUCCESS);
-	}
-	else if (code == CLOSE_NOPRINT)
-		exit(EXIT_SUCCESS);
-	ft_putstr_fd(2, "unhandled exit code\n");
-	exit(EXIT_FAILURE);
-}
 
 void	do_move(t_checker *checker, char *move)
 {
@@ -60,7 +37,7 @@ void	do_move(t_checker *checker, char *move)
 	else if (!ft_strcmp("rrr", move))
 		rotate_rrr(checker);
 	else
-		close_push_swap(CLOSE_ERROR);
+		close_program(CLOSE_ERROR);
 	ft_putendl_fd(1, move);
 }
 
@@ -77,10 +54,10 @@ void	get_algo(t_checker *checker)
 	else if (checker->stack_a.size <= 100)
 		sort_six_to_hundred(checker);
 	else
-		close_push_swap(CLOSE_ERROR);
+		close_program(CLOSE_ERROR);
 	if (checker->stack_b.size)
-		close_push_swap(CLOSE_ERROR);
-	// get_algo(checker);
+		close_program(CLOSE_ERROR);
+	get_algo(checker);
 }
 
 int	main(int argc, char **argv)
@@ -90,5 +67,5 @@ int	main(int argc, char **argv)
 	parsing(&checker, argc, argv);
 	print_stacks(&checker);
 	get_algo(&checker);
-	exit(CLOSE_NOPRINT);
+	close_program(CLOSE_NOPRINT);
 }

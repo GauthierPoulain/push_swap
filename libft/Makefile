@@ -51,6 +51,7 @@ SRCS = \
 	src/is_sorted.c \
 	src/print_stacks.c \
 	src/ft_putstr_fd.c \
+	src/close.c \
 
 %.o: %.c $(HEADER)
 	@printf "[ ${_PURPLE}${_BOLD}${NAME}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"

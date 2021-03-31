@@ -6,35 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 13:11:11 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 15:56:09 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/checker.h"
-
-void	close_checker(int code)
-{
-	if (code == CLOSE_ERROR)
-	{
-		ft_putstr_fd(2, "Error\n");
-		exit(EXIT_FAILURE);
-	}
-	else if (code == CLOSE_OK)
-	{
-		ft_putstr_fd(1, "OK\n");
-		exit(EXIT_SUCCESS);
-	}
-	else if (code == CLOSE_KO)
-	{
-		ft_putstr_fd(1, "KO\n");
-		exit(EXIT_SUCCESS);
-	}
-	else
-	{
-		ft_putstr_fd(1, "unhandled close code\n");
-		exit(EXIT_FAILURE);
-	}
-}
 
 void	run_instru(t_checker *checker, char *move)
 {
@@ -61,7 +37,7 @@ void	run_instru(t_checker *checker, char *move)
 	else if (!ft_strcmp("rrr", move))
 		rotate_rrr(checker);
 	else
-		close_checker(CLOSE_ERROR);
+		close_program(CLOSE_ERROR);
 }
 
 int	main(int argc, char **argv)
@@ -70,9 +46,9 @@ int	main(int argc, char **argv)
 
 	parsing(&checker, argc, argv);
 	if (is_sorted(checker.stack_a))
-		close_checker(CLOSE_OK);
+		close_program(CLOSE_OK);
 	get_instru(&checker);
 	if (is_sorted(checker.stack_a))
-		close_checker(CLOSE_OK);
-	close_checker(CLOSE_KO);
+		close_program(CLOSE_OK);
+	close_program(CLOSE_KO);
 }

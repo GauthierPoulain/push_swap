@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 13:31:41 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 15:51:40 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 15:54:40 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ char		*ft_strdup(char *s1);
 bool		ft_strcmp(const char *s1, const char *s2);
 void		ft_putstr_fd(int fd, char *str);
 void		ft_putendl_fd(int fd, char *str);
+void		close_program(int code);
 
 void		ft_swap(int *a, int *b);
 
