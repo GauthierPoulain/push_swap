@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:31:59 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 10:36:33 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 11:15:10 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	close_push_swap(int code);
 void	do_move(t_checker *checker, char *move);
 
 void	sort_int_tab(int *tab, int size);
+int		get_min(t_stack stack);
+int		get_max(t_stack stack);
 
 void	sort_two(t_checker *checker);
 void	sort_three(t_checker *checker);

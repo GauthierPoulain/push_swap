@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 10:36:05 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 10:42:06 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 11:14:59 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,36 @@ void	sort_int_tab(int *tab, int size)
 			}
 		}
 	}
+}
+
+int	get_min(t_stack stack)
+{
+	int		min;
+	int		i;
+
+	min = stack.stack[0];
+	i = 0;
+	while (i < stack.size)
+	{
+		if (stack.stack[i] < min)
+			min = stack.stack[i];
+		i++;
+	}
+	return (min);
+}
+
+int	get_max(t_stack stack)
+{
+	int		max;
+	int		i;
+
+	max = stack.stack[0];
+	i = 0;
+	while (i < stack.size)
+	{
+		if (stack.stack[i] > max)
+			max = stack.stack[i];
+		i++;
+	}
+	return (max);
 }
