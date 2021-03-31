@@ -25,7 +25,8 @@ NAME = libft.a
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
 # CFLAGS += $(CDEFFLAGS) -O3 -fno-builtin
-CFLAGS += $(CDEFFLAGS) -g -fsanitize=address
+CFLAGS += $(CDEFFLAGS) -g
+# CFLAGS += $(CDEFFLAGS) -fsanitize=address
 
 MAKE = make --no-print-directory
 

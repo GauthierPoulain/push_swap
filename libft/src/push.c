@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:21:15 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 13:32:38 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 15:40:40 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	ft_push(t_stack *src, t_stack *dst)
 		return ;
 	buff = src->stack[0];
 	src->stack[0] = 0;
+	dst->size++;
 	rot1(src);
 	rotn1(dst);
 	src->size--;
-	dst->size++;
 	dst->stack[0] = buff;
 }
 

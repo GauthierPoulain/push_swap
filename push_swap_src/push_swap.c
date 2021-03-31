@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:34:32 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 13:22:33 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 15:52:54 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,10 @@ void	close_push_swap(int code)
 		ft_putstr_fd(1, "KO\n");
 		exit(EXIT_SUCCESS);
 	}
-	else
-	{
-		ft_putstr_fd(2, "unhandled exit code\n");
-		exit(EXIT_FAILURE);
-	}
+	else if (code == CLOSE_NOPRINT)
+		exit(EXIT_SUCCESS);
+	ft_putstr_fd(2, "unhandled exit code\n");
+	exit(EXIT_FAILURE);
 }
 
 void	do_move(t_checker *checker, char *move)
@@ -81,7 +80,7 @@ void	get_algo(t_checker *checker)
 		close_push_swap(CLOSE_ERROR);
 	if (checker->stack_b.size)
 		close_push_swap(CLOSE_ERROR);
-	get_algo(checker);
+	// get_algo(checker);
 }
 
 int	main(int argc, char **argv)
@@ -89,6 +88,7 @@ int	main(int argc, char **argv)
 	t_checker	checker;
 
 	parsing(&checker, argc, argv);
+	print_stacks(&checker);
 	get_algo(&checker);
-	return (0);
+	exit(CLOSE_NOPRINT);
 }

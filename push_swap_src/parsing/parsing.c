@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 16:05:40 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 10:14:19 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 15:47:46 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,10 @@ static void	fill_stack_a(t_checker *checker, int argc, char **argv)
 {
 	int		i;
 
-	checker->stack_a.stack = malloc(sizeof(int) * (argc - 1));
+	checker->stack_a.size = argc - 1;
+	checker->stack_a.stack = malloc(sizeof(int) * checker->stack_a.size);
 	if (!checker->stack_a.stack)
 		close_push_swap(CLOSE_ERROR);
-	checker->stack_a.stack = checker->stack_a.stack;
-	checker->stack_a.size = argc - 1;
 	i = 1;
 	while (i < argc)
 	{

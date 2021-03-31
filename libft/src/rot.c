@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:24:58 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 13:05:35 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 15:35:55 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@ void	rot1(t_stack *stack)
 {
 	int		*st;
 	int		i;
-	int		tmp;
+	int		buff;
 
+	if (stack->size < 2)
+		return ;
 	st = stack->stack;
-	tmp = st[0];
+	buff = st[0];
 	i = 1;
 	while (i < stack->size)
 	{
 		st[i - 1] = st[i];
 		i++;
 	}
-	st[stack->size - 1] = tmp;
+	st[stack->size - 1] = buff;
 }
 
 void	rotate_ra(t_checker *checker)

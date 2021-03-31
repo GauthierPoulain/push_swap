@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:26:53 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 13:32:45 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 15:35:44 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ void	rotn1(t_stack *stack)
 	int		i;
 	int		buff;
 
+	if (stack->size < 2)
+		return ;
 	st = stack->stack;
-	i = stack->size;
 	buff = st[stack->size];
+	i = stack->size;
 	while (i > 0)
 	{
 		st[i] = st[i - 1];

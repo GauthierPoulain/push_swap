@@ -4,3 +4,5 @@
 DS.Store
 checker
 push_swap
+.VSCodeCounter
+*.dSYM

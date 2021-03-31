@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 13:31:41 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 12:49:00 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 15:51:40 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <malloc/malloc.h>
 
 # define 	PRINT_STACKS	0
 
 # define CLOSE_OK		0
 # define CLOSE_KO		1
 # define CLOSE_ERROR	2
+# define CLOSE_NOPRINT	3
 
 typedef struct s_list
 {
