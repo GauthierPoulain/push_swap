@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 10:31:49 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 16:33:47 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 10:03:08 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ bool	have_lower(t_stack stack, int max)
 
 	i = -1;
 	while (++i < stack.size)
-		if (stack.stack[i] > max)
+		if (stack.stack[i] >= max)
 			return (true);	
 	return (false);
 }
@@ -90,7 +90,7 @@ void	sort_six_to_hundred(t_checker *checker)
 	sort(checker);
 	while (have_lower(checker->stack_a, med))
 	{
-		if (checker->stack_a.stack[0] > med)
+		if (checker->stack_a.stack[0] >= med)
 			do_move(checker, "pb");
 		else
 			do_move(checker, "ra");
