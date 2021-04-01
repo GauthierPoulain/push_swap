@@ -24,8 +24,8 @@ NAME = push_swap
 
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
-# CFLAGS += $(CDEFFLAGS) -O3 -fno-builtin
-CFLAGS += $(CDEFFLAGS) -g
+CFLAGS += $(CDEFFLAGS) -O3 -fno-builtin
+# CFLAGS += $(CDEFFLAGS) -g
 # CFLAGS += $(CDEFFLAGS) -fsanitize=address
 
 MAKE = make --no-print-directory

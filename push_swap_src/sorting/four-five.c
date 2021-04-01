@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:38:39 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/30 10:30:03 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 13:09:03 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	push_2_mins(t_checker *checker)
 			min = checker->stack_a.stack[i];
 		}
 	}
-	if (i < checker->stack_a.size / 2)
+	if (id <= checker->stack_a.size / 2)
 		while (checker->stack_a.stack[0] != min)
 			do_move(checker, "ra");
 	else

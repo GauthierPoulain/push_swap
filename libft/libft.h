@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 13:31:41 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 09:09:46 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 12:38:37 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_checker
 {
 	t_stack			stack_a;
 	t_stack			stack_b;
+	t_list			*moves;
 }				t_checker;
 
 int			ft_atoi(const char *str);
