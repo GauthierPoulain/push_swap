@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:31:59 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/01 10:11:31 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 15:13:15 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ int		get_closer(t_stack stack, int value);
 
 bool	have_higher(t_stack stack, int min);
 bool	have_lower(t_stack stack, int max);
+bool	have_inrange(t_stack stack, int min, int max);
 
 void	sort_two(t_checker *checker);
 void	sort_three(t_checker *checker);
 void	sort_four_five(t_checker *checker);
 void	sort_six_to_hundred(t_checker *checker);
+void	sort_over_hundred(t_checker *checker);
 
 #endif
