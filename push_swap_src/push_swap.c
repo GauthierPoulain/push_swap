@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:34:32 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/01 13:47:38 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 14:09:08 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	do_move(t_checker *checker, char *move)
 	else
 		close_program(CLOSE_ERROR);
 	ft_lstadd_back(&checker->moves, ft_lstnew(ft_strdup(move)));
-	// ft_putendl_fd(1, move);
 }
 
 void	foretdeif(t_list *lst, bool *skip)

@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 10:31:49 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/01 13:46:37 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 14:09:49 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ void	sort(t_checker *checker)
 	}
 }
 
-
 void	sort_six_to_hundred(t_checker *checker)
 {
 	int		med;
@@ -107,8 +106,6 @@ void	sort_six_to_hundred(t_checker *checker)
 			do_move(checker, "ra");
 	}
 	sort(checker);
-	while (checker->stack_b.size > 0)
-		do_move(checker, "pa");
 	while (have_lower(checker->stack_a, med))
 	{
 		if (checker->stack_a.stack[0] >= med)
