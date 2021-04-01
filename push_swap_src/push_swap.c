@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:34:32 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 16:12:12 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 10:40:41 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int	main(int argc, char **argv)
 	t_checker	checker;
 
 	parsing(&checker, argc, argv);
-	// print_stacks(&checker);
 	get_algo(&checker);
 	close_program(CLOSE_NOPRINT);
 }

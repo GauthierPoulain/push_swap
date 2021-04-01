@@ -48,6 +48,7 @@ SRCS_PS = \
 	$(DIR_PS)/parsing/check.c \
 	$(DIR_PS)/parsing/parsing.c \
 	$(DIR_PS)/sorting/utils.c \
+	$(DIR_PS)/sorting/utils2.c \
 	$(DIR_PS)/sorting/two.c \
 	$(DIR_PS)/sorting/three.c \
 	$(DIR_PS)/sorting/four-five.c \

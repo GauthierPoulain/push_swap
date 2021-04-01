@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:31:59 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 11:22:22 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 10:11:31 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ void	sort_int_tab(int *tab, int size);
 int		get_min(t_stack stack);
 int		get_max(t_stack stack);
 int		get_closer(t_stack stack, int value);
+
+bool	have_higher(t_stack stack, int min);
+bool	have_lower(t_stack stack, int max);
 
 void	sort_two(t_checker *checker);
 void	sort_three(t_checker *checker);

@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 10:31:49 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/01 10:03:08 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 11:05:05 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,47 +30,42 @@ static int	get_median(t_stack stack)
 	return (res);
 }
 
-void		sort(t_checker *checker)
+int	get_way(t_stack stack, int min)
+{
+	int		i;
+
+	i = 0;
+	while (i < stack.size && stack.stack[i] != min)
+		i++;
+	if (i < stack.size / 2)
+		return (1);
+	return (-1);
+}
+
+void	sort(t_checker *checker)
 {
 	int		min;
 	int		max;
-	
+
 	while (checker->stack_b.size > 0)
 	{
 		min = get_min(checker->stack_b);
 		max = get_max(checker->stack_b);
-		if (checker->stack_b.stack[0] == min)
+		if (checker->stack_b.stack[0] <= min)
 		{
 			do_move(checker, "pa");
 			do_move(checker, "ra");
 		}
-		else if (checker->stack_b.stack[0] == max)
+		else if (checker->stack_b.stack[0] >= max)
 			do_move(checker, "pa");
 		else
-			do_move(checker, "rb");
+		{
+			if (get_way(checker->stack_b, min) == -1)
+				do_move(checker, "rrb");
+			else
+				do_move(checker, "rb");
+		}
 	}
-}
-
-bool	have_higher(t_stack stack, int min)
-{
-	int		i;
-
-	i = -1;
-	while (++i < stack.size)
-		if (stack.stack[i] < min)
-			return (true);	
-	return (false);
-}
-
-bool	have_lower(t_stack stack, int max)
-{
-	int		i;
-
-	i = -1;
-	while (++i < stack.size)
-		if (stack.stack[i] >= max)
-			return (true);	
-	return (false);
 }
 
 void	sort_six_to_hundred(t_checker *checker)
