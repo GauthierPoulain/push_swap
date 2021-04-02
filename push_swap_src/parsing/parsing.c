@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 16:05:40 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/03/31 15:55:47 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 11:36:07 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,14 @@ static bool	check_atoi(char *str)
 {
 	bool	res;
 	bool	sign;
+	int		i;
 
 	sign = false;
 	res = false;
-	while (*str)
+	i = -1;
+	while (str[++i])
 	{
-		if (ft_isdigit(*str))
+		if (ft_isdigit(str[i]))
 			res = true;
 		else
 		{
@@ -41,11 +43,10 @@ static bool	check_atoi(char *str)
 			sign = true;
 		}
 		if (res)
-			if (!ft_isdigit(*str))
+			if (!ft_isdigit(str[i]))
 				return (false);
-		str++;
 	}
-	return (res);
+	return (res && check_int_overflow(str));
 }
 
 static void	fill_stack_a(t_checker *checker, int argc, char **argv)

@@ -35,7 +35,7 @@ DIR_C = checker_src
 HEADERS_C = $(DIR_C)/includes/checker.h
 OBJS_C = $(SRCS_C:%.c=%.o)
 SRCS_C = \
-	$(DIR_C)/checker.c \
+		$(DIR_C)/checker.c \
 	$(DIR_C)/parsing/parsing.c \
 	$(DIR_C)/parsing/check.c \
 

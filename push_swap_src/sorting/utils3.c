@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 09:03:50 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/02 09:55:55 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 11:58:23 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	get_srt_index(t_stack stack, int pos)
 	while (--i >= 0)
 		dup[i] = stack.stack[i];
 	sort_int_tab(dup, stack.size);
+	if (pos > stack.size - 1)
+		pos = stack.size - 1;
 	res = dup[pos];
 	free(dup);
 	return (res);
