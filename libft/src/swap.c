@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 12:18:31 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/02 03:50:55 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 06:34:19 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,10 @@ bool	swap_sb(t_checker *checker)
 
 bool	swap_ss(t_checker *checker)
 {
-	return (swap_sa(checker) || swap_sb(checker));
+	bool	sa;
+	bool	sb;
+
+	sa = swap_sa(checker);
+	sb = swap_sb(checker);
+	return (sa || sb);
 }

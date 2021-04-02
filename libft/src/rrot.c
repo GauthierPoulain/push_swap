@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:26:53 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/02 04:03:16 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 06:33:40 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,10 @@ bool	rotate_rrb(t_checker *checker)
 
 bool	rotate_rrr(t_checker *checker)
 {
-	return (rotate_rra(checker) || rotate_rrb(checker));
+	bool	rra;
+	bool	rrb;
+
+	rra = rotate_rra(checker);
+	rrb = rotate_rrb(checker);
+	return (rra || rrb);
 }

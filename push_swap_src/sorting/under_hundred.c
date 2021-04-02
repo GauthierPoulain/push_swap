@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 10:31:49 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/02 03:46:26 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 04:38:35 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,29 +40,6 @@ int	get_way(t_stack stack, int min, int max)
 	if (i < stack.size / 2)
 		return (1);
 	return (-1);
-}
-
-void	sort_in_b(t_checker *checker)
-{
-	int		min;
-	int		max;
-
-	if (checker->stack_b.size < 10)
-		do_move(checker, "pb");
-	else
-	{
-		min = get_min(checker->stack_b);
-		max = get_max(checker->stack_b);
-		if (checker->stack_a.stack[0] < min)
-			do_move(checker, "pb");
-		else if (checker->stack_a.stack[0] > max)
-		{
-			do_move(checker, "pb");
-			do_move(checker, "rb");
-		}
-		else
-			do_move(checker, "pb");
-	}
 }
 
 void	sort(t_checker *checker)
@@ -101,7 +78,7 @@ void	sort_under_hundred(t_checker *checker)
 	while (have_lower(checker->stack_a, med))
 	{
 		if (checker->stack_a.stack[0] >= med)
-			sort_in_b(checker);
+			do_move(checker, "pb");
 		else
 			do_move(checker, "ra");
 	}
@@ -109,7 +86,7 @@ void	sort_under_hundred(t_checker *checker)
 	while (have_higher(checker->stack_a, med))
 	{
 		if (checker->stack_a.stack[0] < med)
-			sort_in_b(checker);
+			do_move(checker, "pb");
 		else
 			do_move(checker, "ra");
 	}

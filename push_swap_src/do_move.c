@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 01:54:59 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/02 04:04:14 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 04:31:07 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,10 +109,10 @@ void	do_move(t_checker *checker, char *move)
 		do_move_2(checker, move, &save);
 	if (save)
 	{
+		count_op(checker, move);
 		if (DIRECT_PRINT)
 			ft_putendl_fd(1, move);
 		else
 			ft_lstadd_back(&checker->moves, ft_lstnew(ft_strdup(move)));
-		count_op(checker, move);
 	}
 }
