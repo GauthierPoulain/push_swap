@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:31:59 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/02 10:24:21 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 10:48:47 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../../libft/libft.h"
 
-# define	DIRECT_PRINT	0
+# define	DIRECT_PRINT	1
 # define	PRINT_OP_COUNT	0
 
 #	define	UNDER_H_SPLIT	6

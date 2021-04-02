@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:34:32 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/02 10:17:51 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 10:42:29 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	get_algo(t_checker *checker)
 		sort_over_hundred(checker);
 	if (checker->stack_b.size)
 		close_program(CLOSE_ERROR);
-	get_algo(checker);
+	// get_algo(checker);
 }
 
 int	main(int argc, char **argv)

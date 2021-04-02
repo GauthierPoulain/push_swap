@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 10:23:09 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/02 10:23:11 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 10:47:04 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ void	sort_under_hundred(t_checker *checker)
 	pt = -1;
 	while (++pt <= UNDER_H_SPLIT)
 		sort_p2(checker, cut, pt);
-	while (checker->stack_a.size > 0)
-		do_move(checker, "pb");
 	free(cut);
 	sort(checker);
 }
@@ -98,8 +96,6 @@ void	sort_over_hundred(t_checker *checker)
 	pt = -1;
 	while (++pt <= OVER_H_SPLIT)
 		sort_p2(checker, cut, pt);
-	while (checker->stack_a.size > 0)
-		do_move(checker, "pb");
 	free(cut);
 	sort(checker);
 }
