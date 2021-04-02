@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   four-five.c                                        :+:      :+:    :+:   */
+/*   under_five.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:38:39 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/01 13:09:03 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 02:39:28 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	push_2_mins(t_checker *checker)
 		push_2_mins(checker);
 }
 
-void	sort_four_five(t_checker *checker)
+void	sort_under_five(t_checker *checker)
 {
 	push_2_mins(checker);
 	if (checker->stack_a.size == 2 && !is_sorted(checker->stack_a))

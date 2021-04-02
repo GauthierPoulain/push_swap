@@ -24,9 +24,9 @@ NAME = push_swap
 
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
-CFLAGS += $(CDEFFLAGS) -O3 -fno-builtin
-# CFLAGS += $(CDEFFLAGS) -g
-# CFLAGS += $(CDEFFLAGS) -fsanitize=address
+# CFLAGS += $(CDEFFLAGS) -O3 -fno-builtin
+CFLAGS += $(CDEFFLAGS) -g
+CFLAGS += $(CDEFFLAGS) -fsanitize=address
 
 MAKE = make --no-print-directory
 
@@ -45,14 +45,15 @@ HEADERS_C = $(DIR_PS)/includes/push_swap.h
 OBJS_PS = $(SRCS_PS:%.c=%.o)
 SRCS_PS = \
 	$(DIR_PS)/push_swap.c \
+	$(DIR_PS)/do_move.c \
 	$(DIR_PS)/parsing/check.c \
 	$(DIR_PS)/parsing/parsing.c \
 	$(DIR_PS)/sorting/utils.c \
 	$(DIR_PS)/sorting/utils2.c \
 	$(DIR_PS)/sorting/two.c \
 	$(DIR_PS)/sorting/three.c \
-	$(DIR_PS)/sorting/four-five.c \
-	$(DIR_PS)/sorting/six-hundred.c \
+	$(DIR_PS)/sorting/under_five.c \
+	$(DIR_PS)/sorting/under_hundred.c \
 	$(DIR_PS)/sorting/over_hundred.c \
 
 %.o: %.c $(HEADERS_C)

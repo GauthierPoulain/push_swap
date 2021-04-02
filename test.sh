@@ -30,6 +30,9 @@ while [ $COUNT -lt $ITER ]; do
 	echo "min = $MIN"
 	echo "max = $MAX"
 	echo "avg = $AVG"
+	# if [ $NB -gt 10000 ]; then
+	# 	python3 ./pyviz.py $ARG
+	# fi
 	if [ "$RET" != "OK" ]; then
 		echo $ARG
 		read -n 1 k <&1

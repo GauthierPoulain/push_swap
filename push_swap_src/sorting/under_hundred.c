@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   six-hundred.c                                      :+:      :+:    :+:   */
+/*   under_hundred.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 10:31:49 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/01 15:40:47 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 03:46:26 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,22 @@ void	sort_in_b(t_checker *checker)
 	int		min;
 	int		max;
 
-	if (checker->stack_b.size < 1)
-	{
+	if (checker->stack_b.size < 10)
 		do_move(checker, "pb");
-		return ;
-	}
-	min = get_min(checker->stack_b);
-	max = get_max(checker->stack_b);
-	if (checker->stack_a.stack[0] < min)
-		do_move(checker, "pb");
-	else if (checker->stack_a.stack[0] > max)
-	{
-		do_move(checker, "pb");
-		do_move(checker, "rb");
-	}
 	else
-		do_move(checker, "pb");
+	{
+		min = get_min(checker->stack_b);
+		max = get_max(checker->stack_b);
+		if (checker->stack_a.stack[0] < min)
+			do_move(checker, "pb");
+		else if (checker->stack_a.stack[0] > max)
+		{
+			do_move(checker, "pb");
+			do_move(checker, "rb");
+		}
+		else
+			do_move(checker, "pb");
+	}
 }
 
 void	sort(t_checker *checker)
@@ -91,21 +91,13 @@ void	sort(t_checker *checker)
 	}
 }
 
-void	sort_six_to_hundred(t_checker *checker)
+void	sort_under_hundred(t_checker *checker)
 {
 	int		med;
 	int		size;
 
 	size = checker->stack_a.size;
 	med = get_median(checker->stack_a);
-	while (have_higher(checker->stack_a, med))
-	{
-		if (checker->stack_a.stack[0] < med)
-			sort_in_b(checker);
-		else
-			do_move(checker, "ra");
-	}
-	sort(checker);
 	while (have_lower(checker->stack_a, med))
 	{
 		if (checker->stack_a.stack[0] >= med)
@@ -114,8 +106,16 @@ void	sort_six_to_hundred(t_checker *checker)
 			do_move(checker, "ra");
 	}
 	sort(checker);
+	while (have_higher(checker->stack_a, med))
+	{
+		if (checker->stack_a.stack[0] < med)
+			sort_in_b(checker);
+		else
+			do_move(checker, "ra");
+	}
+	sort(checker);
 	while (checker->stack_b.size > 0)
 		do_move(checker, "pa");
 	while (!is_sorted(checker->stack_a))
-		do_move(checker, "ra");
+		do_move(checker, "rra");
 }

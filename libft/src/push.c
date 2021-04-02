@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:21:15 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/01 14:07:31 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 03:55:05 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,18 @@ void	ft_push(t_stack *src, t_stack *dst)
 	dst->stack[0] = buff;
 }
 
-void	push_pa(t_checker *checker)
+bool	push_pa(t_checker *checker)
 {
+	if (checker->stack_b.size < 1)
+		return (false);
 	ft_push(&checker->stack_b, &checker->stack_a);
+	return (true);
 }
 
-void	push_pb(t_checker *checker)
+bool	push_pb(t_checker *checker)
 {
+	if (checker->stack_a.size < 1)
+		return (false);
 	ft_push(&checker->stack_a, &checker->stack_b);
+	return (true);
 }

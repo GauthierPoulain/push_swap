@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:26:53 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/01 13:18:12 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 04:03:16 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,23 @@ void	rotn1(t_stack *stack)
 	st[0] = buff;
 }
 
-void	rotate_rra(t_checker *checker)
+bool	rotate_rra(t_checker *checker)
 {
+	if (checker->stack_a.size < 2)
+		return (false);
 	rotn1(&checker->stack_a);
+	return (true);
 }
 
-void	rotate_rrb(t_checker *checker)
+bool	rotate_rrb(t_checker *checker)
 {
+	if (checker->stack_b.size < 2)
+		return (false);
 	rotn1(&checker->stack_b);
+	return (true);
 }
 
-void	rotate_rrr(t_checker *checker)
+bool	rotate_rrr(t_checker *checker)
 {
-	rotn1(&checker->stack_a);
-	rotn1(&checker->stack_b);
+	return (rotate_rra(checker) || rotate_rrb(checker));
 }

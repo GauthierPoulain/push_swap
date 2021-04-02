@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 13:31:41 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/01 12:38:37 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 04:03:23 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,27 @@ typedef struct s_stack
 	ssize_t			size;
 }				t_stack;
 
+typedef struct s_count
+{
+	int		sa;
+	int		sb;
+	int		ss;
+	int		pa;
+	int		pb;
+	int		ra;
+	int		rb;
+	int		rr;
+	int		rra;
+	int		rrb;
+	int		rrr;
+}			t_count;
+
 typedef struct s_checker
 {
 	t_stack			stack_a;
 	t_stack			stack_b;
 	t_list			*moves;
+	t_count			count;
 }				t_checker;
 
 int			ft_atoi(const char *str);
@@ -68,32 +84,26 @@ void		close_program(int code);
 
 void		ft_swap(int *a, int *b);
 
-void		swap_sa(t_checker *checker);
-void		swap_sb(t_checker *checker);
-void		swap_ss(t_checker *checker);
+bool		swap_sa(t_checker *checker);
+bool		swap_sb(t_checker *checker);
+bool		swap_ss(t_checker *checker);
 
 void		ft_push(t_stack *dst, t_stack *src);
 
-void		push_pa(t_checker *checker);
-void		push_pb(t_checker *checker);
+bool		push_pa(t_checker *checker);
+bool		push_pb(t_checker *checker);
 
 void		rot1(t_stack *stack);
 
-void		rotate_ra(t_checker *checker);
-void		rotate_rb(t_checker *checker);
-void		rotate_rr(t_checker *checker);
+bool		rotate_ra(t_checker *checker);
+bool		rotate_rb(t_checker *checker);
+bool		rotate_rr(t_checker *checker);
 
 void		rotn1(t_stack *stack);
 
-void		rotate_rra(t_checker *checker);
-void		rotate_rrb(t_checker *checker);
-void		rotate_rrr(t_checker *checker);
-
-void		ft_swap(int *a, int *b);
-
-void		swap_sa(t_checker *checker);
-void		swap_sb(t_checker *checker);
-void		swap_ss(t_checker *checker);
+bool		rotate_rra(t_checker *checker);
+bool		rotate_rrb(t_checker *checker);
+bool		rotate_rrr(t_checker *checker);
 
 void		print_stacks(t_checker *checker);
 bool		is_sorted(t_stack stack);
