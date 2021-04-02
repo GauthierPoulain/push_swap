@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:34:32 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/02 04:04:57 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 10:17:51 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void	get_algo(t_checker *checker)
 		sort_under_five(checker);
 	else if (checker->stack_a.size <= 100)
 		sort_under_hundred(checker);
+	else
+		sort_over_hundred(checker);
 	if (checker->stack_b.size)
 		close_program(CLOSE_ERROR);
 	get_algo(checker);

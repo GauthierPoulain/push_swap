@@ -1,12 +1,15 @@
 #!/bin/bash
-clear
 make
+clear
 ITER=$2
 MAX=0
 MIN=-1
 COUNT=0
 OVER=900
 COUNTOVER=0
+COUNTOK=0
+COUNTKO=0
+COUNTERROR=0
 AVG=0
 TOTAL=0
 while [ $COUNT -lt $ITER ]; do
@@ -25,20 +28,33 @@ while [ $COUNT -lt $ITER ]; do
 	if [ $NB -lt $MIN ]; then
 		MIN=$(expr $NB)
 	fi
-	clear
-	echo "$COUNT / $ITER"
-	echo $RET
-	echo $NB
-	echo "min = $MIN"
-	echo "max = $MAX"
-	echo "over  = $COUNTOVER"
-	echo "avg = $AVG"
+	if [ "$RET" == "OK" ]; then
+		COUNTOK=$(expr $COUNTOK + 1)
+		# echo $ARG
+		# read -n 1 k <&1
+	elif [ "$RET" == "KO" ]; then
+		COUNTKO=$(expr $COUNTKO + 1)
+		# echo $ARG
+		# read -n 1 k <&1
+	else
+		COUNTERROR=$(expr $COUNTERROR + 1)
+		# echo $ARG
+		# read -n 1 k <&1
+	fi
 	if [ $NB -gt $OVER ]; then
 		COUNTOVER=$(expr $COUNTOVER + 1)
 	fi
-	if [ "$RET" != "OK" ]; then
-		echo $ARG
-		echo $(./push_swap $ARG)
-		read -n 1 k <&1
-	fi
+	OUTPUT="$COUNT / $ITER
+current return = $RET
+current op = $NB
+total op = $TOTAL
+OK = $COUNTOK
+KO = $COUNTKO
+Error = $COUNTERROR
+min = $MIN
+max = $MAX
+over  = $COUNTOVER
+avg = $AVG"
+	clear
+	echo -e "$OUTPUT"
 done

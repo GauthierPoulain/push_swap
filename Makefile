@@ -50,11 +50,11 @@ SRCS_PS = \
 	$(DIR_PS)/parsing/parsing.c \
 	$(DIR_PS)/sorting/utils.c \
 	$(DIR_PS)/sorting/utils2.c \
+	$(DIR_PS)/sorting/utils3.c \
 	$(DIR_PS)/sorting/two.c \
 	$(DIR_PS)/sorting/three.c \
 	$(DIR_PS)/sorting/under_five.c \
-	$(DIR_PS)/sorting/under_hundred.c \
-	$(DIR_PS)/sorting/over_hundred.c \
+	$(DIR_PS)/sorting/large_values.c \
 
 %.o: %.c $(HEADERS_C)
 	@printf "[ $(_PURPLE)$(_BOLD)$(NAME)$(_END) ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
