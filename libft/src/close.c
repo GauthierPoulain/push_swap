@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 15:53:59 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/02 11:05:36 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/05 10:48:56 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	close_program(int code)
 {
 	if (code == CLOSE_ERROR)
 	{
-		ft_putstr_fd(1, "Error\n");
+		ft_putstr_fd(2, "Error\n");
 		exit(EXIT_FAILURE);
 	}
 	else if (code == CLOSE_OK)
@@ -31,6 +31,6 @@ void	close_program(int code)
 	}
 	else if (code == CLOSE_NOPRINT)
 		exit(EXIT_SUCCESS);
-	ft_putstr_fd(1, "unhandled exit code\n");
+	ft_putstr_fd(2, "Error\n");
 	exit(EXIT_FAILURE);
 }
