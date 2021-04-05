@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 11:12:26 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/05 10:32:08 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/05 10:32:47 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ bool	check_int_overflow(char *str)
 			str--;
 			*str = '-';
 		}
-		printf("%s %d\n", str, ft_atoi(str));
 	}
 	else
 		while (*str == '0' && ft_strlen(str) > 1)
