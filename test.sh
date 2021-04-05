@@ -13,7 +13,7 @@ COUNTERROR=0
 AVG=0
 TOTAL=0
 while [ $COUNT -le $ITER ]; do
-	ARG=$(ruby -e "puts (1..$COUNT).to_a.shuffle.join(' ')")
+	ARG=$(ruby -e "puts (1..$1).to_a.shuffle.join(' ')")
 	RET=$(./push_swap $ARG | ./checker $ARG)
 	NB=$(./push_swap $ARG | wc -l)
 	TOTAL=$(expr $TOTAL + $NB)
