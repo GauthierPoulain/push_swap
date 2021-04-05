@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 11:12:26 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/02 11:36:19 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/05 10:01:33 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,9 @@ bool	check_int_overflow(char *str)
 	bool	res;
 
 	tmp = ft_itoa(ft_atoi(str));
+
+	while (*str == '0' && ft_strlen(str) > 1)
+		str++;
 	res = ft_strcmp(str, tmp);
 	free(tmp);
 	return (!res);
