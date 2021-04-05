@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:34:32 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/05 10:14:02 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/05 10:55:23 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int	main(int argc, char **argv)
 {
 	t_checker	checker;
 
+	if (argc == 1)
+		close_program(CLOSE_NOPRINT);
 	parsing(&checker, argc, argv);
 	checker.moves = NULL;
 	do_move(&checker, "init");

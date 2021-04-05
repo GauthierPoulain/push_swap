@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 03:02:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/04/02 01:50:17 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/04/05 10:54:51 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	main(int argc, char **argv)
 {
 	t_checker	checker;
 
+	if (argc == 1)
+		close_program(CLOSE_NOPRINT);
 	parsing(&checker, argc, argv);
 	if (is_sorted(checker.stack_a))
 		close_program(CLOSE_OK);
